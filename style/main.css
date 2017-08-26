@@ -1,15 +1,37 @@
 body {
+    font-family: 'Arial',
     background-image: url('../images/bg.png');
     background-color: blue;
     color: #fff;
+    line-height: 2;
+}
+
+.header {
+    border-bottom: 5px solid #fff;
 }
 
 .title {
     text-align: center;
     font-size: 6em;
+    margin: 4rem 0;
 }
 
-hr {
-    border-width: 5px;
-    margin: 40px;
+.content {
+    font-size: 4em;
+    padding: 7rem 0;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    border-bottom: 2px solid #fff;
+    text-decoration: none;
+    color: #eee;
+}
+
+.content {
+    font-size: 4em;
+    padding: 2rem 0;
 }
