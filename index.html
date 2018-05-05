@@ -11,9 +11,9 @@
 
 <body>
 
-<audio src="https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3" autoplay="true">
+<!-- <audio src="https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3" autoplay="true">
     <p>If you are reading this, it is because your browser does not support the audio element.</p>
-</audio>
+</audio> -->
 
 <div class="whole-thing text-center">
     <div class="tv-wrapper">
@@ -41,6 +41,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    var source = "https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3"
+    var audio = document.createElement("audio");
+    audio.autoplay = true;
+    audio.load()
+    audio.addEventListener("load", function() {
+     audio.play();
+    }, true);
+    audio.src = source;
+</script>
 
 </body>
 
