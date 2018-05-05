@@ -11,12 +11,14 @@
 
 <body>
 
-<!-- <audio src="https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3" autoplay="true">
+<audio src="https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3">
     <p>If you are reading this, it is because your browser does not support the audio element.</p>
-</audio> -->
+</audio>
 
-<div class="whole-thing text-center">
-    <div class="tv-wrapper">
+<div class="whole-thing">
+    <button id="playButton" class="hide">Play Music &#9658;</button>
+
+    <div class="tv-wrapper text-center">
         <h1 class="title text-shadow__red">Now In Stock</h1>
         <hr>
         <div class="section section--two-ply text-colour--white text-shadow__black">
@@ -43,14 +45,37 @@
 </div>
 
 <script>
-    var source = "https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3"
-    var audio = document.createElement("audio");
-    audio.autoplay = true;
-    audio.load()
-    audio.addEventListener("load", function() {
-     audio.play();
-    }, true);
-    audio.src = source;
+    // var source = "https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3"
+    // var audio = document.createElement("audio");
+    // audio.autoplay = true;
+    // audio.load()
+    // audio.addEventListener("load", function() {
+    //  audio.play();
+    // }, true);
+    // audio.src = source;
+
+    var audio = document.querySelector('audio');
+    var playButton = document.querySelector('#playButton');
+    var promise = audio.play();
+
+
+    playButton.addEventListener('click', function() {
+        audio.play()
+    })
+
+
+
+    if (promise !== undefined) {
+      promise.then(_ => {
+          console.log('good', _);
+        // Autoplay started!
+      }).catch(error => {
+          console.log('bad');
+        // Autoplay was prevented.
+        // Show a "Play" button so that user can start playback.
+        playButton.classList.remove('hide');
+      });
+    }
 </script>
 
 </body>

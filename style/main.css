@@ -99,3 +99,17 @@ a:hover {
     letter-spacing: 5px;
     word-spacing: 5px;
 }
+
+.hide {
+    display: none;
+}
+
+#playButton {
+    margin-top: 10px;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 2px;
+    border: 0;
+    background: #a62455;
+    margin: 1rem;
+}
