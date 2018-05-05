@@ -112,4 +112,11 @@ a:hover {
     border: 0;
     background: #a62455;
     margin: 1rem;
+    font-weight: bold;
+}
+
+#playButton:hover {
+    background: #d2b036;
+    transform: scale(1.05);
+    transition: 200ms;
 }
