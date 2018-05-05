@@ -127,3 +127,11 @@ button:hover,
     transform: scale(1.05);
     transition: 200ms;
 }
+
+.author {
+    position: absolute;
+    top: 5px;
+    right: 3rem;
+    color: #444 !important;
+    padding: 0 5px;
+}
