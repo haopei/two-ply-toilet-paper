@@ -57,10 +57,7 @@ a:visited {
 }
 
 a:hover {
-    border-bottom: 2px solid #fff;
-    text-decoration: none;
-    color: #eee;
-    background: #a62356;
+
 }
 
 .content {
@@ -132,6 +129,12 @@ button:hover,
     position: absolute;
     top: 5px;
     right: 3rem;
-    color: #444 !important;
+    color: #4a3709 !important;
     padding: 0 5px;
+}
+
+.author:hover {
+    transform: scale(2.4) translate3d(-18px, 4px, 5px) skew(12deg) rotate3d(0, 1, 0.5, 0.142rad);
+    text-shadow: #a62454 -1px 0px 0px;
+    color: #d2b036 !important;
 }
