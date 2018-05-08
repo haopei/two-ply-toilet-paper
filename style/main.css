@@ -138,3 +138,27 @@ button:hover,
     text-shadow: #a62454 -1px 0px 0px;
     color: #d2b036 !important;
 }
+
+.modal-content {
+    box-shadow: #000 41px 3px 370px;
+}
+
+.modal-body {
+    background-image: url('../images/bg2.png');
+    background-color: #1e77f4;
+    border: 15px solid #1b1b1b;
+    border-bottom: 0;
+}
+
+.modal-footer {
+    background: #1b1b1b;
+    border: 0;
+}
+
+.about-button {
+    float: right;
+    margin: 5px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid #3844f9;
+}

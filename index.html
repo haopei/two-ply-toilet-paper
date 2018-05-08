@@ -13,6 +13,7 @@
 <body>
 <div class="whole-thing">
     <button id="playButton">Play Music &#9658;</button>
+    <button class="about-button" data-toggle="modal" data-target="#myModal">?</button>
 
     <div class="tv-wrapper text-center">
         <h1 class="title text-shadow__red">Now In Stock</h1>
@@ -46,100 +47,44 @@
             <button class="tribute__button" id="PlayFullHouse">Full House &#9658;</button>
             <button class="tribute__button" id="PlayThreesCompany">Three's Company &#9658;</button>
         </p>
+        <!-- <a href="https://twitter.com/haopeiyang" class="author">@haopei</a> -->
     </div>
-    <a href="https://twitter.com/haopeiyang" class="author">@haopei</a>
 
 </div>
 
-<script>
-
-    var buttonThreesCompany = document.querySelector('#PlayThreesCompany');
-    var buttonFamilyMatters = document.querySelector('#PlayFamilyMatters');
-    var buttonFullHouse = document.querySelector('#PlayFullHouse');
-
-    var audio = new Audio('https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3');
-
-    // hold the state of currently playing song
-    var nowPlaying = {
-        currentlyPlaying: audio,
-        nowShowingText: '',
-        currentActiveButton: null
-    }
-
-    document.querySelector('#playButton').addEventListener('click', function() {
-        var button = this;
-        var audioUrl = 'https://storage.googleapis.com/two-ply-toilet-tissue/quiet-place-mimms.mp3'
-        var audio = new Audio(audioUrl)
-        audio.play().then(function() {
-            resetButtonTexts();
-            stopPlayingAudio(nowPlaying.currentlyPlaying);
-            nowPlaying.currentlyPlaying = audio;
-        })
-    })
-
-    buttonFamilyMatters.addEventListener('click', function() {
-        var thisButton = this;
-        thisButton.innerText = "Stay Tuned...";
-        var audioUrl = 'https://storage.googleapis.com/two-ply-toilet-tissue/family-matters-song.mp3';
-        var audio = new Audio(audioUrl)
-        audio.play().then(function() {
-            resetButtonTexts();
-            thisButton.innerText = "Now Showing: Family Matters";
-            thisButton.classList.add('button__currently-playing');
-            stopPlayingAudio(nowPlaying.currentlyPlaying);
-            nowPlaying.currentlyPlaying = audio;
-        })
-    })
-
-    buttonFullHouse.addEventListener('click', function() {
-        var thisButton = this;
-        thisButton.innerText = "Stay Tuned...";
-        var audioUrl = 'https://storage.googleapis.com/two-ply-toilet-tissue/Full_House_Season_Eight_Extended_Theme_Song.mp3';
-        var audio = new Audio(audioUrl)
-        audio.play().then(function() {
-            resetButtonTexts();
-            thisButton.innerText = "Now Showing: Full House";
-            thisButton.classList.add('button__currently-playing');
-            stopPlayingAudio(nowPlaying.currentlyPlaying);
-            nowPlaying.currentlyPlaying = audio;
-        })
-    })
+      
+<!-- Modal -->
+<div class="modal fade text-center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    <div class="modal-body">
+        <h2 class="title text-shadow__red">Hello Everyone</h2>
+        <hr>
+        <div class="section section--two-ply text-colour--white text-shadow__black">
+            Like many of you
+        </div>
+        <div></div>
+        <p>I was glued to the TV during the evening hours watching Family Matters, Full House, Three's Company, and The Jeffersons</p>
+        <p>My hand held TV remote and not a smart phone; ahh the good old days.</p>
+        <p>This TV commercial has been an anchor in our lives for so long, I wanted to immortalize it. Also so; I have created this page.</p>
+        <p>I hope you enjoyed the bitter-sweet nostalgia.</p> 
+        <br>
+        <p>Peace and love, </p>
+        <p><a class="text-shadow__red text-colour--white" href="https://www.twitter.com/yanghaopei">@yanghaopei</a></p>
+        <p>(PS: I am not getting paid for this in any way.)</p>
+    </div>
+    <div class="modal-footer text-center" style="display: inherit; text-align: center;">
+        <img src="images/sharp-logo.jpg" width="50" alt="">
+    </div>
+    </div>
+</div>
+</div>
 
 
-    buttonThreesCompany.addEventListener('click', function() {
-        var thisButton = this;
-        thisButton.innerText = "Stay Tuned...";
-        var audioUrl = 'https://storage.googleapis.com/two-ply-toilet-tissue/threes-company-song.mp3';
-        var audio = new Audio(audioUrl)
-        audio.play().then(function() {
-            resetButtonTexts();
-            thisButton.innerText = "Now Showing: Three's Company";
-            thisButton.classList.add('button__currently-playing');
-            stopPlayingAudio(nowPlaying.currentlyPlaying);
-            nowPlaying.currentlyPlaying = audio;
-        })
-    })
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 
-    document.querySelector('#comingUpNext').addEventListener('click', function() {
-        this.classList.add('hide');
-        document.querySelector('#tvGuide').classList.remove('hide');
-    })
-
-    function stopPlayingAudio(audio) {
-        audio.currentTime = 0;
-        audio.pause();
-    }
-
-    function resetButtonTexts() {
-        // I know... I know...
-        buttonFamilyMatters.innerText = 'Family Matters';
-        buttonFamilyMatters.classList.remove('button__currently-playing');
-        buttonFullHouse.innerText = 'Full House';
-        buttonFullHouse.classList.remove('button__currently-playing');
-        buttonThreesCompany.innerText = "Three's Company";
-        buttonThreesCompany.classList.remove('button__currently-playing');
-    }
-</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118762523-1"></script>
